@@ -8,4 +8,6 @@ const conexao = mysql.createConnection({
     database: 'db_api_teste_node'
 });
 
+conexao.connect();
+
 export default conexao;
