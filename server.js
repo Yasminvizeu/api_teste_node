@@ -1,5 +1,5 @@
 import app from './src/app.js'
-import conexao from './infra/conexao.js';
+import conexao from './src/app/database/conexao.js';
 const PORT = 3000;
 
 //escutar a porta
