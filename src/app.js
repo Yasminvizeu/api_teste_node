@@ -1,25 +1,20 @@
 import express from 'express';
-import selecaoController from './app/controllers/selecaoController.js';
+import routes from './routes.js';
 
 const app = express();
 
-//indica para o express ler body com json
+// Indica para o express ler body com JSON
 app.use(express.json());
 
-function buscarSelecoesPorId(id){
-    return selecoes.filter(selecao => selecao.id == id);
-};
+// Usa routes.js
+app.use(routes);
 
-function buscaIndexSelecao(id){
-    return selecoes.findIndex(selecao => selecao.id == id);
-};
+function buscarSelecoesPorId(id) {
+  return selecoes.filter(selecao => selecao.id == id);
+}
 
-// criar rotas
-app.get('/selecoes',selecaoController.index);
-app.get('/selecoes/:id',selecaoController.show);
-app.post('/selecoes', selecaoController.store);
-app.put('/selecoes/:id', selecaoController.update);
-app.delete('/selecoes/:id', selecaoController.delete);
+function buscaIndexSelecao(id) {
+  return selecoes.findIndex(selecao => selecao.id == id);
+}
 
 export default app;
-

@@ -1,6 +1,5 @@
-import app from './src/app.js'
-import conexao from './src/app/database/conexao.js';
-const PORT = 3000;
+import app from './app.js'
+const PORT = process.env.PORT || 3000
 
 //escutar a porta
 app.listen(PORT, () => {
